@@ -1,8 +1,8 @@
-import React from 'react'
+import Home from './pages/home/home'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div><Home/></div>
   )
 }
 
