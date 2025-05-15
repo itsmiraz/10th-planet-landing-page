@@ -1,4 +1,28 @@
-import GlowImg from '@/assets/images/red-glow.png'
+import GlowImg from "@/assets/images/red-glow.png";
+import legImg from "@/assets/images/legLocks.png";
+import noGiImg from "@/assets/images/noGi.png";
+import openMatImg from "@/assets/images/openMat.png";
+
+const trainingEvents = [
+  {
+    title: "No Gi",
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Euismod id tellus quis vulputate in fermentum lacinia pharetra aliquet. Nullam eget lacus est arcu scelerisque pharetra.",
+    image: noGiImg,
+  },
+  {
+    title: "Advanced Leg Locks",
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Euismod id tellus quis vulputate in fermentum lacinia pharetra aliquet. Nullam eget lacus est arcu scelerisque pharetra.",
+    image: legImg,
+  },
+  {
+    title: "Open Mat",
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Euismod id tellus quis vulputate in fermentum lacinia pharetra aliquet. Nullam eget lacus est arcu scelerisque pharetra.",
+    image: openMatImg,
+  },
+];
 const Program = () => {
   return (
     <div className="pt-[195px] overflow-hidden relative pb-[117px] font-jakarta">
@@ -15,8 +39,31 @@ const Program = () => {
         refine their skills in a competitive environment.
       </p>
 
-      <img src={GlowImg} className="absolute -left-[400px] top-1/2 transform -translate-y-1/2" alt="" />
-      <img src={GlowImg} className="absolute -right-[400px] top-1/2 transform -translate-y-1/2" alt="" />
+      <div className="mt-[79px] justify-center flex gap-x-[36px]">
+        {trainingEvents.map((item, i) => (
+          <div
+            className="rounded-[16px] max-w-[410px] h-[448px] px-[32px] font-jakarta flex flex-col justify-center items-center programCardBg"
+            key={i}
+          >
+            <img className="w-[91px]" src={item.image} alt="" />
+            <h1 className="text-[32px] pt-[34px] pb-[15px] font-bold leading-[100%]">
+              {item.title}
+            </h1>
+            <p className="text-[20px] text-center">{item.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <img
+        src={GlowImg}
+        className="absolute -left-[400px] top-1/2 transform -translate-y-1/2"
+        alt=""
+      />
+      <img
+        src={GlowImg}
+        className="absolute -right-[400px] top-1/2 transform -translate-y-1/2"
+        alt=""
+      />
     </div>
   );
 };
