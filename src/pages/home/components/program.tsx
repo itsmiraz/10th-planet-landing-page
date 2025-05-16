@@ -56,12 +56,22 @@ const Program = () => {
 
       <img
         src={GlowImg}
-        className="absolute -left-[400px] top-1/2 transform -translate-y-1/2"
+        className="absolute -left-[400px] top-1/4 transform -translate-y-1/2"
         alt=""
       />
       <img
         src={GlowImg}
-        className="absolute -right-[400px] top-1/2 transform -translate-y-1/2"
+        className="absolute -right-[400px] top-1/4 transform -translate-y-1/2"
+        alt=""
+      />
+      <img
+        src={GlowImg}
+        className="absolute -left-[400px] -bottom-40 "
+        alt=""
+      />
+      <img
+        src={GlowImg}
+        className="absolute -right-[400px]  -bottom-40  "
         alt=""
       />
     </div>

@@ -4,6 +4,7 @@ import Program from "./components/program";
 import LevelUp from "./components/levelUp";
 import Instructors from "./components/instructors";
 import KidClass from "./components/kidClass";
+import Contact from "./components/contact";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <LevelUp/>
       <Instructors/>
       <KidClass/>
+      <Contact/>
     </div>
   );
 };
