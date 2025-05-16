@@ -11,3 +11,7 @@ body {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.053) 100%);
 
 }
+.footerBg{
+  background: linear-gradient(180deg, #0B0B0B 0%, #130700 100%);
+
+}
