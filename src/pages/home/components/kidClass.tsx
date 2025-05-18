@@ -1,10 +1,23 @@
 import KidClassImg from "@/assets/images/kidClass.png";
+import AnimatedText from "@/components/ui/animatedText";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const KidClass = () => {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
+
   return (
-    <div className="flex md:flex-row flex-col mt-[200px] mb-[170px] font-jakarta gap-[40px] md:gap-[160px] justify-between  bg-gradient-to-r from-[#12100E] to-[#171717]">
+    <motion.div
+      initial={{ y: 80, opacity: 0 }}
+      animate={{ y: inView ? 0 : 80, opacity: inView ? 1 : 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      ref={ref}
+      className="flex md:flex-row flex-col mt-[200px] mb-[170px] font-jakarta gap-[40px] md:gap-[160px] justify-between  bg-gradient-to-r from-[#12100E] to-[#171717]"
+    >
       <div className="py-[69px] px-[20px] md:text-start text-center md:px-[67px]">
-        <h2 className="text-[32px] pb-[25px] font-bold ">Join The Kid Class</h2>
+        <AnimatedText className="text-[32px] pb-[25px] font-bold ">
+          <>Join The Kid Class</>
+        </AnimatedText>
         <p className="text-[18px] md:text-[22px] max-w-[620px]">
           Lorem ipsum dolor sit amet consectetur. Euismod id tellus quis
           vulputate in fermentum lacinia pharetra aliquet. Nullam eget lacus est
@@ -28,7 +41,7 @@ const KidClass = () => {
       <div>
         <img className="h-full" src={KidClassImg} alt="" />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

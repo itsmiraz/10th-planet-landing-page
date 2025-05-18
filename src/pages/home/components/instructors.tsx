@@ -3,9 +3,20 @@ import instructor2 from "@/assets/images/instructor2.png";
 import BlackBeltIcon from "@/assets/icons/blackBeltIcon.svg";
 import BrownBeltIcon from "@/assets/icons/brownBeltIcon.svg";
 import TitleIcon from "@/assets/icons/title.svg";
+import {motion} from 'framer-motion'
+
+import { useInView } from "react-intersection-observer";
+
 const Instructors = () => {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
+
+
   return (
-    <div className="pt-[109px] overflow-hidden font-jakarta">
+        <motion.div
+        initial={{ y: 80, opacity: 0 }}
+        animate={{ y: inView ? 0 : 80, opacity: inView ? 1 : 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+    ref={ref} className="pt-[109px] overflow-hidden font-jakarta">
       {" "}
       <h1 className="text-[34px] md:text-[50px] uppercase  pb-[27px] font-extrabold text-center leading-[100%]">
         OUR INSTRUCTORS
@@ -62,7 +73,7 @@ const Instructors = () => {
           <div className="w-fit">
             <div className="flex md:flex-row flex-col pb-[20px] justify-between items-center">
               <h2 className="text-[30px] md:text-[40px] uppercase leading-[100%] pb-[30px] font-bold">
-              Luca
+                Luca
               </h2>
               <span className="flex leading-[100%] font-bold gap-x-2 text-[24px] bg-[#744A30] px-[26px] py-2 rounded-[12px]">
                 <TitleIcon />
@@ -82,7 +93,7 @@ const Instructors = () => {
 
         <div></div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

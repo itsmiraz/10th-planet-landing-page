@@ -2,7 +2,8 @@ import GlowImg from "@/assets/images/red-glow.png";
 import legImg from "@/assets/images/legLocks.png";
 import noGiImg from "@/assets/images/noGi.png";
 import openMatImg from "@/assets/images/openMat.png";
-
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 const trainingEvents = [
   {
     title: "No Gi",
@@ -24,24 +25,36 @@ const trainingEvents = [
   },
 ];
 const Program = () => {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
+
   return (
-    <div className="pt-[195px] px-[20px] overflow-hidden relative pb-[117px] font-jakarta">
+    <motion.div
+      ref={ref}
+      initial={{ y: 80, opacity: 0 }}
+      animate={{ y: inView ? 0 : 80, opacity: inView ? 1 : 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="pt-[195px] px-[20px] overflow-hidden relative pb-[117px] font-jakarta"
+    >
       <h1 className="text-[34px] md:text-[50px] uppercase  pb-[27px] font-extrabold text-center leading-[100%]">
         Our Program
       </h1>
       <div className="w-[96px] h-[8px]  bg-[#F58215] mx-auto"></div>
       <p className="text-[18px] md:text-[24px] text-center pt-[38px] leading-[146%]">
         At 10th Planet Montreal, we bring a modern, no-gi approach to Brazilian
-        Jiu-Jitsu, rooted <br className="md:block hidden" /> in the innovative system developed by{" "}
-        <span className="font-bold">Eddie Bravo</span>. Our academy is built for
-        practitioners of <br className="md:block hidden" /> all levels, from beginners looking to start
-        their Jiu-Jitsu journey to experienced grapplers <br className="md:block hidden" /> seeking to
+        Jiu-Jitsu, rooted <br className="md:block hidden" /> in the innovative
+        system developed by <span className="font-bold">Eddie Bravo</span>. Our
+        academy is built for practitioners of <br className="md:block hidden" />{" "}
+        all levels, from beginners looking to start their Jiu-Jitsu journey to
+        experienced grapplers <br className="md:block hidden" /> seeking to
         refine their skills in a competitive environment.
       </p>
 
       <div className="mt-[79px] justify-center flex md:flex-row flex-col gap-[36px]">
         {trainingEvents.map((item, i) => (
-          <div
+          <motion.div
+            initial={{ y: 80, opacity: 0 }}
+            animate={{ y: inView ? 0 : 80, opacity: inView ? 1 : 0 }}
+            transition={{ duration: 0.6, delay: i * 0.3, ease: "easeOut" }}
             className="rounded-[16px] max-w-[410px] h-[448px] px-[32px] font-jakarta flex flex-col justify-center items-center programCardBg"
             key={i}
           >
@@ -50,7 +63,7 @@ const Program = () => {
               {item.title}
             </h1>
             <p className="text-[20px] text-center">{item.description}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
 
@@ -74,7 +87,7 @@ const Program = () => {
         className="absolute -right-[400px]  -bottom-40  "
         alt=""
       />
-    </div>
+    </motion.div>
   );
 };
 

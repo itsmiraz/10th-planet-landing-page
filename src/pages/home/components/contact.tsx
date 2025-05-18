@@ -1,10 +1,21 @@
 import EmailIcon from "@/assets/icons/email.svg";
 import AddressIcon from "@/assets/icons/location.svg";
 import PhoneIcon from "@/assets/icons/phone.svg";
-import GlowImg from '@/assets/images/red-glow.png'
+import GlowImg from "@/assets/images/red-glow.png";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+
 const Contact = () => {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
+
   return (
-    <div className="font-jakarta px-[20px] overflow-hidden relative">
+    <motion.div
+      initial={{ y: 80, opacity: 0 }}
+      animate={{ y: inView ? 0 : 80, opacity: inView ? 1 : 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      ref={ref}
+      className="font-jakarta px-[20px] overflow-hidden relative"
+    >
       <h1 className="text-[32px] md:text-[50px] uppercase  pb-[27px] font-extrabold text-center leading-[100%]">
         Contact US
       </h1>
@@ -64,37 +75,32 @@ const Contact = () => {
       <div className="flex md:flex-row flex-col  justify-center items-center md:items-start gap-10 mt-[74px] mb-[127px] ">
         <div className="flex gap-[20px] flex-col justify-center items-center">
           <EmailIcon />
-        <div className="text-center">
-
-         
-          <p className="text-[20px] text-bold">Email:</p>
-          <p className="text-[22px]">10thplanetjjmtl@gmail.com</p>
-        </div>
+          <div className="text-center">
+            <p className="text-[20px] text-bold">Email:</p>
+            <p className="text-[22px]">10thplanetjjmtl@gmail.com</p>
+          </div>
         </div>
         <div className="flex gap-[20px] flex-col justify-center items-center">
           <AddressIcon />
-        <div className="text-center">
+          <div className="text-center">
+            <p className="text-[20px] text-bold">Address :</p>
 
-        
-          <p className="text-[20px] text-bold">Address :</p>
-        
-          <p className="text-[22px]">
-            6723 Boulevard Monk <br />
-            Montreal, Quebec, H4E 3J2
-          </p>
-        </div>
+            <p className="text-[22px]">
+              6723 Boulevard Monk <br />
+              Montreal, Quebec, H4E 3J2
+            </p>
+          </div>
         </div>
         <div className="flex gap-[20px] flex-col justify-center items-center">
           <PhoneIcon />
-        <div className="text-center">
-              <p className="text-[20px] text-bold">Phone :</p>
-          <p className="text-[22px]">(514) 516-4922</p>
-        </div>
+          <div className="text-center">
+            <p className="text-[20px] text-bold">Phone :</p>
+            <p className="text-[22px]">(514) 516-4922</p>
+          </div>
         </div>
       </div>
 
-
-        <img
+      <img
         src={GlowImg}
         className="absolute -left-[400px] top-1/2 transform -translate-y-1/2"
         alt=""
@@ -104,7 +110,7 @@ const Contact = () => {
         className="absolute -right-[400px] top-1/2 transform -translate-y-1/2"
         alt=""
       />
-    </div>
+    </motion.div>
   );
 };
 
