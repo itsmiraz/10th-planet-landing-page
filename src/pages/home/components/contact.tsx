@@ -4,14 +4,14 @@ import PhoneIcon from "@/assets/icons/phone.svg";
 import GlowImg from '@/assets/images/red-glow.png'
 const Contact = () => {
   return (
-    <div className="font-jakarta overflow-hidden relative">
-      <h1 className="text-[50px] uppercase  pb-[27px] font-extrabold text-center leading-[100%]">
+    <div className="font-jakarta px-[20px] overflow-hidden relative">
+      <h1 className="text-[32px] md:text-[50px] uppercase  pb-[27px] font-extrabold text-center leading-[100%]">
         Contact US
       </h1>
       <div className="w-[96px] h-[8px]  bg-[#F58215] mx-auto"></div>
 
       <div className="pt-[70px] space-y-[15px] mx-auto max-w-[867px]">
-        <div className="flex gap-[38px]">
+        <div className="flex md:flex-row flex-col gap-[38px]">
           <div className="w-full">
             <label className="text-[16px] mb-[10px] " htmlFor="">
               First Name
@@ -61,7 +61,7 @@ const Contact = () => {
         </button>
       </div>
 
-      <div className="flex justify-center items-start gap-10 mt-[74px] mb-[127px] ">
+      <div className="flex md:flex-row flex-col  justify-center items-center md:items-start gap-10 mt-[74px] mb-[127px] ">
         <div className="flex gap-[20px] flex-col justify-center items-center">
           <EmailIcon />
         <div className="text-center">

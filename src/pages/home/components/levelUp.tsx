@@ -2,19 +2,19 @@ import React from "react";
 import PoweredByPaypal from "@/assets/images/poweredByPaypal.png";
 const LevelUp = () => {
   return (
-    <div className="pt-[233px] font-jakarta pb-[20px]">
-      <div className="bg-[#191919] max-w-[1308px] mx-auto flex justify-between items-end rounded-[24px] p-[50px]">
-        <div>
+    <div className="pt-[150px] md:pt-[233px] px-[20px] font-jakarta pb-[20px]">
+      <div className="bg-[#191919] w-full md:max-w-[1308px] mx-auto gap-20 flex md:flex-row flex-col justify-between items-start md:items-end rounded-[24px] px-[20px] py-[40px] md:p-[50px]">
+        <div className=" w-full">
           <h2 className="text-[36px] font-semibold leading-[100%]">
             Ready to level up?
           </h2>
-          <p className="text-[22px] py-[8px] max-w-[805px]">
+          <p className="text-lg md:text-[22px] py-[12px] md:py-[8px] md:max-w-[805px]">
             Lorem ipsum dolor sit amet consectetur. Euismod id tellus quis
             vulputate in fermentum lacinia pharetra aliquet. Nullam eget lacus
             est arcu scelerisque pharetra. Sed enim phasellus scelerisque ac
             ipsum vulputate.
           </p>
-          <div className="flex items-center gap-x-6">
+          <div className="flex flex-wrap  items-center gap-6">
             <div className="flex items-center gap-x-2 ">
               <h2 className="text-[56px] leading-[110%] items-center font-bold">130$</h2>
               <p className="text-[18px] leading-[100%]">

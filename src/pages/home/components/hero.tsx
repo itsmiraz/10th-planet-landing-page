@@ -10,8 +10,8 @@ const Hero = () => {
       
       <Header/>
       <div>
-        <p className="bg-[#FFFFFF]/5 w-fit mt-[91px]  px-[40px] py-[8px] text-[22px] leading-[100%] mx-auto rounded-full text-center">Best Source of No-Gi Jiu Jitsu in Montreal</p>
-        <h1 className="text-center pt-[28px] pb-[50px] text-[52px] font-bold ">
+        <p className="bg-[#FFFFFF]/5 w-fit mt-[40px] md:mt-[91px]  md:px-[40px] py-[8px] text-[22px] leading-[100%] mx-auto rounded-full text-center">Best Source of No-Gi Jiu Jitsu in Montreal</p>
+        <h1 className="text-center pt-[28px] pb-[50px] text-[42px] md:text-[52px] font-bold ">
           10th Planet Jiu-Jitsu <br /> Montreal
         </h1>
         <div className="flex justify-center gap-x-4 items-center">

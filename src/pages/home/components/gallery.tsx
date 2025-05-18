@@ -15,13 +15,13 @@ const Gallery = () => {
   return (
     <div className="font-jakarta pt-[40px] mb-[200px]">
       <div>
-        <h1 className="text-[50px] uppercase  pb-[27px] font-extrabold text-center leading-[100%]">
+        <h1 className="text-[32px] md:text-[50px] uppercase  pb-[27px] font-extrabold text-center leading-[100%]">
           GALLERY
         </h1>
         <div className="w-[96px] h-[8px]  bg-[#F58215] mx-auto"></div>
-        <p className="text-[22px] pt-[41px] text-center leading-[142%]">
+        <p className="text-[18px] px-[20px] md:text-[22px] pt-[41px] text-center leading-[142%]">
           Lorem ipsum dolor sit amet consectetur. Euismod id tellus quis
-          vulputate in <br /> fermentum lacinia pharetra aliquet. Nullam eget
+          vulputate in <br className="md:block hidden" /> fermentum lacinia pharetra aliquet. Nullam eget
           lacus est arcu sceler
         </p>
 

@@ -25,21 +25,21 @@ const trainingEvents = [
 ];
 const Program = () => {
   return (
-    <div className="pt-[195px] overflow-hidden relative pb-[117px] font-jakarta">
-      <h1 className="text-[50px] uppercase  pb-[27px] font-extrabold text-center leading-[100%]">
+    <div className="pt-[195px] px-[20px] overflow-hidden relative pb-[117px] font-jakarta">
+      <h1 className="text-[34px] md:text-[50px] uppercase  pb-[27px] font-extrabold text-center leading-[100%]">
         Our Program
       </h1>
       <div className="w-[96px] h-[8px]  bg-[#F58215] mx-auto"></div>
-      <p className="text-[24px] text-center pt-[38px] leading-[146%]">
+      <p className="text-[18px] md:text-[24px] text-center pt-[38px] leading-[146%]">
         At 10th Planet Montreal, we bring a modern, no-gi approach to Brazilian
-        Jiu-Jitsu, rooted <br /> in the innovative system developed by{" "}
+        Jiu-Jitsu, rooted <br className="md:block hidden" /> in the innovative system developed by{" "}
         <span className="font-bold">Eddie Bravo</span>. Our academy is built for
-        practitioners of <br /> all levels, from beginners looking to start
-        their Jiu-Jitsu journey to experienced grapplers <br /> seeking to
+        practitioners of <br className="md:block hidden" /> all levels, from beginners looking to start
+        their Jiu-Jitsu journey to experienced grapplers <br className="md:block hidden" /> seeking to
         refine their skills in a competitive environment.
       </p>
 
-      <div className="mt-[79px] justify-center flex gap-x-[36px]">
+      <div className="mt-[79px] justify-center flex md:flex-row flex-col gap-[36px]">
         {trainingEvents.map((item, i) => (
           <div
             className="rounded-[16px] max-w-[410px] h-[448px] px-[32px] font-jakarta flex flex-col justify-center items-center programCardBg"

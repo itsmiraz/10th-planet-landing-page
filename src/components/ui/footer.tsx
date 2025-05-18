@@ -10,14 +10,14 @@ const Footer = () => {
   return (
     <div className="footerBg flex flex-col pt-[14px] pb-[52px] px-[20px] justify-center items-center">
       <img src={Logo} alt="" />
-      <ul className="flex items-center gap-x-[44px]  pt-[39px] pb-[60px] ">
+      <ul className="flex flex-wrap justify-center items-center gap-x-[44px] gap-y-[30px]  pt-[39px] pb-[60px] ">
         {navLinks.map((item) => (
           <li className="text-[20px] ">
             <a href={item.link}>{item.label}</a>
           </li>
         ))}
       </ul>
-      <p>10th Planet Jiu Jitsu Montreal © 2025 All rights reserved.</p>
+      <p className="text-center">10th Planet Jiu Jitsu Montreal © 2025 All rights reserved.</p>
     </div>
   );
 };
