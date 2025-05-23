@@ -10,7 +10,7 @@ const Hero = () => {
     <div
       ref={ref}
       style={{ backgroundImage: `url(${backGroundImage})` }}
-      className="h-[700px] font-jakarta items-center bg-no-repeat bg-cover bg-center "
+      className="h-[800px] md:h-screen font-jakarta items-center bg-no-repeat bg-cover bg-center "
     >
       <Header />
       <motion.div
