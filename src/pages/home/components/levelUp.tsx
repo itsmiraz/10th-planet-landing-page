@@ -41,7 +41,7 @@ const LevelUp = () => {
             </button>
           </div>
         </div>
-        <div className="md:bg-transparent rounded-[10px] bg-white w-full flex justify-center items-center">
+        <div className="md:bg-transparent rounded-[10px] bg-white w-full flex  justify-center md:justify-end items-center">
           <img className="md:w-fit w-[121px]" src={PoweredByPaypal} alt="" />
         </div>
       </motion.div>
