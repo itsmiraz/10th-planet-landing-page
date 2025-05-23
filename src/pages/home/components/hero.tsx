@@ -18,12 +18,13 @@ const Hero = () => {
         animate={{ y: inView ? 0 : 80, opacity: inView ? 1 : 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <p className="bg-[#FFFFFF]/5 w-fit mt-[40px] md:mt-[91px]  md:px-[40px] py-[8px] text-[22px] leading-[100%] mx-auto rounded-full text-center">
+        <p className="bg-[#FFFFFF]/5 w-fit mt-[101px]  md:mt-[91px]  px-0 md:px-[40px] py-[8px] text-[16px] md:text-[22px] leading-[100%] mx-auto rounded-full text-center">
           Best Source of No-Gi Jiu Jitsu in Montreal
         </p>
-        <AnimatedText className="text-center pt-[28px] pb-[50px] text-[42px] md:text-[52px] font-bold ">
+        <AnimatedText className="text-center pt-[28px] pb-[50px] text-[36px] md:text-[52px] font-bold ">
           <>
-          10th Planet Jiu-Jitsu <br /> Montreal
+            10th Planet Jiu-
+            Jitsu <br className="hidden md:block " /> Montreal
           </>
         </AnimatedText>
         <div className="flex justify-center gap-x-4 items-center">

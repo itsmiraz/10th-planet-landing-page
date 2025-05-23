@@ -33,7 +33,7 @@ const Program = () => {
       initial={{ y: 80, opacity: 0 }}
       animate={{ y: inView ? 0 : 80, opacity: inView ? 1 : 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="pt-[195px] px-[20px] overflow-hidden relative pb-[117px] font-jakarta"
+      className="pt-[70px] md:pt-[195px] px-[20px] overflow-hidden relative pb-[117px] font-jakarta"
     >
       <h1 className="text-[34px] md:text-[50px] uppercase  pb-[27px] font-extrabold text-center leading-[100%]">
         Our Program
@@ -55,14 +55,14 @@ const Program = () => {
             initial={{ y: 80, opacity: 0 }}
             animate={{ y: inView ? 0 : 80, opacity: inView ? 1 : 0 }}
             transition={{ duration: 0.6, delay: i * 0.3, ease: "easeOut" }}
-            className="rounded-[16px] max-w-[410px] h-[448px] px-[32px] font-jakarta flex flex-col justify-center items-center programCardBg"
+            className="rounded-[16px] max-w-[410px] py-[32px] md:py-[0px] h-fit md:h-[448px] px-[28px] md:px-[32px] font-jakarta flex flex-col justify-center items-center programCardBg"
             key={i}
           >
             <img className="w-[91px]" src={item.image} alt="" />
-            <h1 className="text-[32px] pt-[34px] pb-[15px] font-bold leading-[100%]">
+            <h1 className="text-[32px] text-center pt-[34px] pb-[15px] font-bold leading-[100%]">
               {item.title}
             </h1>
-            <p className="text-[20px] text-center">{item.description}</p>
+            <p className="text-[16px] md:text-[20px] text-center">{item.description}</p>
           </motion.div>
         ))}
       </div>

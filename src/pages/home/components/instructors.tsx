@@ -24,30 +24,30 @@ const Instructors = () => {
       <div className="w-[96px] h-[8px]  bg-[#F58215] mx-auto"></div>
       <div className="pt-[108px] space-y-[87px]">
         {/* First instructor */}
-        <div className="flex gap-10 md:flex-row flex-col px-[20px] mx-auto md:max-w-[1250px] gap-x-[71px] items-center justify-between">
-          <div className="relative w-full md:w-[336px] h-[300px]">
+        <div className="flex gap-10 md:flex-row flex-col px-[20px] mx-auto   md:max-w-[1250px] gap-x-[71px] items-center justify-between">
+          <div className="relative w-[252px] md:w-[336px] md:h-[300px]">
             <div className="absolute z-20 -top-8 -right-8">
               <BlackBeltIcon />
             </div>
-            <div className="w-[336px] h-[300px] bg-red-400 relative overflow-hidden  rounded-[24px]">
+            <div className="w-[252px]  h-[225px] mx-auto flex justify-center items-center md:w-[336px] md:h-[300px]  relative overflow-hidden  rounded-[24px]">
               <img
                 src={instructor1}
-                className="rounded-[24px] h-full object-cover w-full "
+                className="rounded-[24px]  h-full object-cover w-full "
                 alt=""
               />
             </div>
           </div>
           <div className="w-full  md:w-fit">
             <div className="flex md:flex-row flex-col pb-[20px] justify-between items-center">
-              <h2 className="text-[30px] md:text-[40px]  uppercase leading-[100%] pb-[30px] font-bold">
-                Professor Louis Ho
+              <h2 className="text-[30px] md:text-start text-center md:text-[40px]  uppercase leading-[100%] pb-[30px] font-bold">
+                Profess <br className="md:hidden block"/> or Louis Ho
               </h2>
-              <span className="flex leading-[100%] font-bold gap-x-2 text-[24px] bg-[#1B1B1B] px-[26px] py-2 rounded-[12px]">
+              <span className="flex leading-[100%] font-bold gap-x-2  text-[18px] items-center md:text-[24px] bg-[#1B1B1B] px-[26px] py-2 rounded-[12px]">
                 <TitleIcon />
                 Black Belt
               </span>
             </div>
-            <p className="text-[18px] md:text-[22px] md:text-start text-center text-white leading-[142%]">
+            <p className="text-[16px] md:text-[22px] md:text-start text-center text-white leading-[142%]">
               Louis Ho is the head instructor at 10th Planet Jiu Jitsu Montreal.
               He is a three time Canadian Jiu Jitsu Champion. He is a U.S.
               National Jiu Jitsu Champion. He is an FFC Submission of the Night
@@ -58,11 +58,11 @@ const Instructors = () => {
           </div>
         </div>
         <div className="flex mx-auto md:flex-row flex-col md:max-w-[1250px] gap-10 px-[20px] gap-x-[71px] items-center justify-between">
-          <div className="relative w-[336px] h-[300px]">
+          <div className="relative w-[252px] md:w-[336px] md:h-[300px]">
             <div className="absolute z-20 -top-8 -right-8">
               <BrownBeltIcon />
             </div>
-            <div className="w-[336px] h-[300px] bg-red-400 relative overflow-hidden  rounded-[24px]">
+            <div className="w-[252px]  h-[225px] mx-auto flex justify-center items-center md:w-[336px] md:h-[300px]  relative overflow-hidden  rounded-[24px]">
               <img
                 src={instructor2}
                 className="rounded-[24px] h-full object-cover w-full "
@@ -75,12 +75,12 @@ const Instructors = () => {
               <h2 className="text-[30px] md:text-[40px] uppercase leading-[100%] pb-[30px] font-bold">
                 Luca
               </h2>
-              <span className="flex leading-[100%] font-bold gap-x-2 text-[24px] bg-[#744A30] px-[26px] py-2 rounded-[12px]">
+              <span className="flex leading-[100%] items-center font-bold gap-x-2 text-[18px] md:text-[24px] bg-[#744A30] px-[26px] py-2 rounded-[12px]">
                 <TitleIcon />
                 Black Belt
               </span>
             </div>
-            <p className="text-[18px] md:text-start text-center md:text-[22px] text-white leading-[142%]">
+            <p className="text-[16px] md:text-start text-center md:text-[22px] text-white leading-[142%]">
               Louis Ho is the head instructor at 10th Planet Jiu Jitsu Montreal.
               He is a three time Canadian Jiu Jitsu Champion. He is a U.S.
               National Jiu Jitsu Champion. He is an FFC Submission of the Night

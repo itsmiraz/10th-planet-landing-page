@@ -12,9 +12,9 @@ const KidClass = () => {
       animate={{ y: inView ? 0 : 80, opacity: inView ? 1 : 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       ref={ref}
-      className="flex md:flex-row flex-col mt-[200px] mb-[170px] font-jakarta gap-[40px] md:gap-[160px] justify-between  bg-gradient-to-r from-[#12100E] to-[#171717]"
+      className="flex md:flex-row  px-[15px] md:px-0 rounded-[16px] md:rounded-none flex-col-reverse mt-[200px] mb-[170px] font-jakarta gap-[0px] md:gap-[160px] justify-between  bg-gradient-to-r from-[#12100E] to-[#171717]"
     >
-      <div className="py-[69px] px-[20px] md:text-start text-center md:px-[67px]">
+      <div className="py-[48px] md:py-[69px] px-[20px] md:text-start text-center md:px-[67px]">
         <AnimatedText className="text-[32px] pb-[25px] font-bold ">
           <>Join The Kid Class</>
         </AnimatedText>
@@ -33,13 +33,13 @@ const KidClass = () => {
               Per <br /> Month
             </p>
           </div>
-          <button className="bg-[#F58215] h-fit leading-[100%] px-8 py-[14px] rounded-[9px] text-[#FFFFFF] text-[22px]">
+          <button className="bg-[#F58215] md:w-fit w-full h-fit leading-[100%] px-8 py-[14px] rounded-[9px] text-[#FFFFFF] text-[22px]">
             Subscribe
           </button>
         </div>
       </div>
-      <div>
-        <img className="h-full" src={KidClassImg} alt="" />
+      <div className="px-[22px]  pt-[44px]">
+        <img className="h-full md:rounded-none rounded-[24px]" src={KidClassImg} alt="" />
       </div>
     </motion.div>
   );
