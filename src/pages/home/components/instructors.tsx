@@ -3,20 +3,22 @@ import instructor2 from "@/assets/images/instructor2.png";
 import BlackBeltIcon from "@/assets/icons/blackBeltIcon.svg";
 import BrownBeltIcon from "@/assets/icons/brownBeltIcon.svg";
 import TitleIcon from "@/assets/icons/title.svg";
-import {motion} from 'framer-motion'
+import { motion } from "framer-motion";
 
 import { useInView } from "react-intersection-observer";
 
 const Instructors = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
-
   return (
-        <motion.div
-        initial={{ y: 80, opacity: 0 }}
-        animate={{ y: inView ? 0 : 80, opacity: inView ? 1 : 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-    ref={ref} className="pt-[109px] overflow-hidden font-jakarta">
+    <motion.div
+      id="instructors"
+      initial={{ y: 80, opacity: 0 }}
+      animate={{ y: inView ? 0 : 80, opacity: inView ? 1 : 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      ref={ref}
+      className="pt-[109px] overflow-hidden font-jakarta"
+    >
       {" "}
       <h1 className="text-[34px] md:text-[50px] uppercase  pb-[27px] font-extrabold text-center leading-[100%]">
         OUR INSTRUCTORS
@@ -39,8 +41,8 @@ const Instructors = () => {
           </div>
           <div className="w-full  md:w-fit">
             <div className="flex md:flex-row flex-col pb-[20px] justify-between items-center">
-              <h2 className="text-[30px] md:text-start text-center md:text-[40px]  uppercase leading-[100%] pb-[30px] font-bold">
-                Profess <br className="md:hidden block"/> or Louis Ho
+              <h2 className="text-[30px] md:text-start text-center md:text-[40px]  uppercase leading-[100%] md:pb-0 pb-[30px] font-bold">
+                Profess <br className="md:hidden block" /> or Louis Ho
               </h2>
               <span className="flex leading-[100%] font-bold gap-x-2  text-[18px] items-center md:text-[24px] bg-[#1B1B1B] px-[26px] py-2 rounded-[12px]">
                 <TitleIcon />
@@ -57,6 +59,7 @@ const Instructors = () => {
             </p>
           </div>
         </div>
+        {/* 2nd Instrucure */}
         <div className="flex mx-auto md:flex-row flex-col md:max-w-[1250px] gap-10 px-[20px] gap-x-[71px] items-center justify-between">
           <div className="relative w-[252px] md:w-[336px] md:h-[300px]">
             <div className="absolute z-20 -top-8 -right-8">
@@ -72,7 +75,7 @@ const Instructors = () => {
           </div>
           <div className="w-fit">
             <div className="flex md:flex-row flex-col pb-[20px] justify-between items-center">
-              <h2 className="text-[30px] md:text-[40px] uppercase leading-[100%] pb-[30px] font-bold">
+              <h2 className="text-[30px] md:text-[40px] uppercase leading-[100%]  md:pb-0 pb-[30px] font-bold">
                 Luca
               </h2>
               <span className="flex leading-[100%] items-center font-bold gap-x-2 text-[18px] md:text-[24px] bg-[#744A30] px-[26px] py-2 rounded-[12px]">

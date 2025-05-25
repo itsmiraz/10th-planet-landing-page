@@ -3,6 +3,7 @@ import Header from "@/components/ui/header";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import AnimatedText from "@/components/ui/animatedText";
+import { Button } from "@/components/ui/buttons";
 const Hero = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
@@ -23,17 +24,18 @@ const Hero = () => {
         </p>
         <AnimatedText className="text-center pt-[28px] pb-[50px] text-[36px] md:text-[52px] font-bold ">
           <>
-            10th Planet Jiu-
-            Jitsu <br className="hidden md:block " /> Montreal
+            10th Planet Jiu- Jitsu <br className="hidden md:block " /> Montreal
           </>
         </AnimatedText>
         <div className="flex justify-center gap-x-4 items-center">
-          <button className="bg-[#F58215] leading-[100%] text-[22px] px-[24px] py-[14px] rounded-[9px]">
+          {/* <button className="bg-[#F58215] leading-[100%] text-[22px] px-[24px] py-[14px] rounded-[9px]">
             Subscribe
-          </button>
-          <button className="border border-white leading-[100%] text-[22px] px-[24px] py-[14px] rounded-[9px]">
+          </button> */}
+          <Button variant="solid">Subscribe</Button>
+          <Button variant="outline">Schedule</Button>
+          {/* <button className="border border-white leading-[100%] text-[22px] px-[24px] py-[14px] rounded-[9px]">
             Schedule
-          </button>
+          </button> */}
         </div>
       </motion.div>
     </div>

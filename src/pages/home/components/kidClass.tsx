@@ -1,5 +1,6 @@
 import KidClassImg from "@/assets/images/kidClass.png";
 import AnimatedText from "@/components/ui/animatedText";
+import { Button } from "@/components/ui/buttons";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -33,12 +34,17 @@ const KidClass = () => {
               Per <br /> Month
             </p>
           </div>
-          <button className="bg-[#F58215] md:w-fit w-full h-fit leading-[100%] px-8 py-[14px] rounded-[9px] text-[#FFFFFF] text-[22px]">
+          {/* <button className="bg-[#F58215] md:w-fit w-full h-fit leading-[100%] px-8 py-[14px] rounded-[9px] text-[#FFFFFF] text-[22px]">
             Subscribe
-          </button>
+          </button> */}
+          <Button variant="solid">
+
+            Subscribe
+          </Button>
+        
         </div>
       </div>
-      <div className="px-[22px]  pt-[44px]">
+      <div className="px-[22px] md:pt-0 md:px-0 pt-[44px]">
         <img className="h-full md:rounded-none rounded-[24px]" src={KidClassImg} alt="" />
       </div>
     </motion.div>

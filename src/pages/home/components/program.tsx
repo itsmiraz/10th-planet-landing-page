@@ -29,6 +29,7 @@ const Program = () => {
 
   return (
     <motion.div
+      id="program"
       ref={ref}
       initial={{ y: 80, opacity: 0 }}
       animate={{ y: inView ? 0 : 80, opacity: inView ? 1 : 0 }}
@@ -62,7 +63,9 @@ const Program = () => {
             <h1 className="text-[32px] text-center pt-[34px] pb-[15px] font-bold leading-[100%]">
               {item.title}
             </h1>
-            <p className="text-[16px] md:text-[20px] text-center">{item.description}</p>
+            <p className="text-[16px] md:text-[20px] text-center">
+              {item.description}
+            </p>
           </motion.div>
         ))}
       </div>

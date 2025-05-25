@@ -1,14 +1,17 @@
 import React from "react";
 import PoweredByPaypal from "@/assets/images/poweredByPaypal.png";
+import PoweredByPaypal2 from "@/assets/images/Powered-By-PayPal-Logo.png";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/buttons";
 const LevelUp = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
   return (
     <div
+      id="about"
       ref={ref}
-      className="pt-[150px] md:pt-[233px] px-[20px] font-jakarta pb-[20px]"
+      className="pt-[100px] md:pt-[170px] px-[20px] font-jakarta pb-[20px]"
     >
       <motion.div
         initial={{ y: 80, opacity: 0 }}
@@ -27,22 +30,22 @@ const LevelUp = () => {
             ipsum vulputate.
           </p>
           <div className="flex flex-wrap  justify-center md:justify-start items-center gap-6">
-            <div className="flex justify-center items-center gap-x-2 ">
-              <h2 className="text-[42px] md:text-[56px] leading-[110%] items-center font-bold">
+            <div className="flex items-center gap-x-2 ">
+              <h2 className="text-[56px] leading-[110%] items-center font-bold">
                 130$
               </h2>
-              <p className="text-[13px] text-start md:text-[18px] leading-[100%]">
+              <p className="text-[18px] text-start leading-[100%]">
                 {" "}
                 Per <br /> Month
               </p>
             </div>
-            <button className="bg-[#F58215] h-fit leading-[100%] px-8 py-[14px] rounded-[9px] text-[#fffff] w-full md:w-fit text-[22px]">
-              Subscribe
-            </button>
+        
+            <Button className="w-full md:w-fit" variant="solid">Subscribe</Button>
           </div>
         </div>
-        <div className="md:bg-transparent rounded-[10px] bg-white w-full flex  justify-center md:justify-end items-center">
-          <img className="md:w-fit w-[121px]" src={PoweredByPaypal} alt="" />
+        <div className="p-4 w-full md:w-fit  rounded-[10px] bg-white flex  justify-center md:justify-end items-center">
+          <img className="md:w-[300px] w-[121px]" src={PoweredByPaypal2} alt="" />
+          {/* <img className="md:w-fit w-[121px] block md:hidden " src={PoweredByPaypal2} alt="" /> */}
         </div>
       </motion.div>
     </div>

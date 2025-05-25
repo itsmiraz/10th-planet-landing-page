@@ -4,12 +4,14 @@ import PhoneIcon from "@/assets/icons/phone.svg";
 import GlowImg from "@/assets/images/red-glow.png";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/buttons";
 
 const Contact = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
   return (
     <motion.div
+    id="contact"
       initial={{ y: 80, opacity: 0 }}
       animate={{ y: inView ? 0 : 80, opacity: inView ? 1 : 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -67,20 +69,25 @@ const Contact = () => {
             id=""
           />
         </div>
-        <button className="bg-[#F58215] mx-auto flex justify-center h-fit leading-[100%] px-12 py-[14px] rounded-[9px] text-[#FFFFFF] text-[22px]">
+        {/* <button className="bg-[#F58215] mx-auto flex justify-center h-fit leading-[100%] px-12 py-[14px] rounded-[9px] text-[#FFFFFF] text-[22px]">
           Send
-        </button>
+        </button> */}
+
+        <div className="flex justify-center items-center">
+          {" "}
+          <Button variant="solid">Send</Button>
+        </div>
       </div>
 
-      <div className="flex md:flex-row flex-col  justify-center items-center md:items-start gap-10 mt-[74px] mb-[127px] ">
-        <div className="flex gap-[20px] flex-col justify-center items-center">
+      <div className="flex max-w-[967px] mx-auto  md:flex-row flex-col px-0  justify-center items-center md:items-start gap-10 mt-[74px] mb-[127px] ">
+        <div className="flex   w-full  gap-[20px] flex-col justify-center items-center">
           <EmailIcon />
           <div className="text-center">
             <p className="text-[20px] text-bold">Email:</p>
             <p className="text-[22px]">10thplanetjjmtl@gmail.com</p>
           </div>
         </div>
-        <div className="flex gap-[20px] flex-col justify-center items-center">
+        <div className="flex  w-full gap-[20px] flex-col justify-center items-center">
           <AddressIcon />
           <div className="text-center">
             <p className="text-[20px] text-bold">Address :</p>
@@ -91,7 +98,7 @@ const Contact = () => {
             </p>
           </div>
         </div>
-        <div className="flex gap-[20px] flex-col justify-center items-center">
+        <div className="flex  w-full  gap-[20px] flex-col justify-center items-center">
           <PhoneIcon />
           <div className="text-center">
             <p className="text-[20px] text-bold">Phone :</p>

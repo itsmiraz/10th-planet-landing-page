@@ -11,6 +11,8 @@ import InstaIcon from "@/assets/icons/insta.svg";
 import WhatsAppIcon from "@/assets/icons/whatsapp.svg";
 import MailIcon from "@/assets/icons/emailO.svg";
 import CanadaIcon from "@/assets/icons/canadaIcon.svg";
+import FranceIcon from "@/assets/icons/france.svg";
+import UKICON from "@/assets/icons/ukIcon.svg";
 import ChevronDown from "@/assets/icons/dropdownIcon.svg";
 const Header = () => {
   const navLinks = [
@@ -73,8 +75,14 @@ const Header = () => {
         <img src={logo} className="md:w-fit w-[100px]" alt="" />
         <ul className="hidden md:flex  items-center gap-x-[44px]  ">
           {navLinks.map((item) => (
-            <li className="text-[20px] ">
-              <a href={item.link}>{item.label}</a>
+            <li key={item.label} className="text-[20px] relative group">
+              <a
+                href={item.link}
+                className="hover:text-orange-500 transition-colors duration-300 ease-out"
+              >
+                {item.label}
+                <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+              </a>
             </li>
           ))}
         </ul>
@@ -136,9 +144,10 @@ const Header = () => {
                   </motion.div>
                 ))}
               </div>
-              <div className="bg-[#FFFFFF]/20 gap-x-2 flex justify-center items-center rounded-[6px] py-2 px-3  w-fit ">
+              {/* <div className="bg-[#FFFFFF]/20 gap-x-2 flex justify-center items-center rounded-[6px] py-2 px-3  w-fit ">
                 <p>ENG</p> <CanadaIcon /> <ChevronDown />
-              </div>
+              </div> */}
+              <LanguageSelector />
             </div>
           </motion.div>
         )}
@@ -148,3 +157,53 @@ const Header = () => {
 };
 
 export default Header;
+
+const LanguageSelector = () => {
+  const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState({
+    code: "ENG",
+    icon: <CanadaIcon />,
+  });
+
+  const languages = [
+    { code: "ENG", icon: <CanadaIcon /> },
+    { code: "FR", icon: <FranceIcon/> },
+    { code: "UK", icon: <UKICON/>},
+  ];
+
+  const toggleDropdown = () => setOpen(!open);
+  const selectLanguage = (lang) => {
+    setSelected(lang);
+    setOpen(false);
+  };
+
+  return (
+    <div className="relative">
+      <div
+        onClick={toggleDropdown}
+        className="bg-[#FFFFFF]/20 gap-x-2 flex justify-center items-center rounded-[6px] py-2 px-3 w-fit cursor-pointer select-none"
+      >
+        <p>{selected.code}</p>
+        {selected.icon}
+        <div className={`transition-transform ${open ? "rotate-180" : ""}`}>
+          <ChevronDown />
+        </div>
+      </div>
+
+      {open && (
+        <div className="absolute top-full mt-2 left-0 z-50 bg-[#FFFFFF]/20 backdrop-blur-xl rounded-md shadow-lg">
+          {languages.map((lang, i) => (
+            <div
+              key={i}
+              onClick={() => selectLanguage(lang)}
+              className="px-3 py-2 justify-between cursor-pointer hover:bg-white/30 flex gap-x-2 items-center text-white text-sm"
+            >
+              <span>{lang.code}</span>
+              {lang.icon}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
