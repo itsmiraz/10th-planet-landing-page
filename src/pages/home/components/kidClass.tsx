@@ -20,9 +20,7 @@ const KidClass = () => {
           <>Join The Kid Class</>
         </AnimatedText>
         <p className="text-[18px] md:text-[22px] max-w-[620px]">
-          Lorem ipsum dolor sit amet consectetur. Euismod id tellus quis
-          vulputate in fermentum lacinia pharetra aliquet. Nullam eget lacus est
-          arcu scelerisque pharetra. Sed enim phasellus scelerisque
+        Help your child build confidence, discipline, and athleticism in a fun and structured no-gi environment. Our kid’s program teaches real Jiu-Jitsu skills through movement, games, and teamwork.
         </p>
         <div className="flex md:flex-row flex-col  mt-[20px] items-center  md:items-center gap-6">
           <div className="flex items-center gap-x-2 ">

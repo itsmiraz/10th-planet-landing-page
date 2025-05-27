@@ -24,10 +24,7 @@ const LevelUp = () => {
             Ready to level up?
           </h2>
           <p className="text-[16px] md:text-[22px] py-[18px] md:py-[8px] md:max-w-[805px]">
-            Lorem ipsum dolor sit amet consectetur. Euismod id tellus quis
-            vulputate in fermentum lacinia pharetra aliquet. Nullam eget lacus
-            est arcu scelerisque pharetra. Sed enim phasellus scelerisque ac
-            ipsum vulputate.
+          Join our team and train under one of the most progressive no-gi systems in the world. Whether you're a beginner or a seasoned grappler, our monthly membership gives you full access to all classes.
           </p>
           <div className="flex flex-wrap  justify-center md:justify-start items-center gap-6">
             <div className="flex items-center gap-x-2 ">

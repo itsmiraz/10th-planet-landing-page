@@ -50,12 +50,7 @@ const Instructors = () => {
               </span>
             </div>
             <p className="text-[16px] md:text-[22px] md:text-start text-center text-white leading-[142%]">
-              Louis Ho is the head instructor at 10th Planet Jiu Jitsu Montreal.
-              He is a three time Canadian Jiu Jitsu Champion. He is a U.S.
-              National Jiu Jitsu Champion. He is an FFC Submission of the Night
-              Superfight Champion. Louis is one of Eddie Bravo’s first black
-              belts and holds the distinction of being the first 10th Planet Jiu
-              Jitsu Black Belt in Canada.
+            Louis Ho is the head instructor at 10th Planet Jiu Jitsu Montreal. He is a three time Canadian Jiu Jitsu Champion. He is a U.S. National Jiu Jitsu Champion. He is an FFC Submission of the Night Superfight Champion. Louis is one of Eddie Bravo’s first black belts and holds the distinction of being the first 10th Planet Jiu Jitsu Black Belt in Canada.
             </p>
           </div>
         </div>

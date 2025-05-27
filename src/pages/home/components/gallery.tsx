@@ -32,9 +32,7 @@ const Gallery = () => {
         </h1>
         <div className="w-[96px] h-[8px]  bg-[#F58215] mx-auto"></div>
         <p className="text-[18px] px-[20px] md:text-[22px] pt-[41px] text-center leading-[142%]">
-          Lorem ipsum dolor sit amet consectetur. Euismod id tellus quis
-          vulputate in <br className="md:block hidden" /> fermentum lacinia
-          pharetra aliquet. Nullam eget lacus est arcu sceler
+        Take a look inside our world. From training sessions to competitions, our <br className="md:block hidden" /> gallery highlights the energy, focus, and community of 10th Planet Montreal.
         </p>
 
         <div className="py-12 max-w-[2000px] overflow-hidden mx-auto relative px-4">

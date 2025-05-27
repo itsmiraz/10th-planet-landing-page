@@ -7,20 +7,19 @@ import { motion } from "framer-motion";
 const trainingEvents = [
   {
     title: "No Gi",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Euismod id tellus quis vulputate in fermentum lacinia pharetra aliquet. Nullam eget lacus est arcu scelerisque pharetra.",
+    description:"Train without the gi in a system focused on control, submissions, and real-world grappling. Build core skills through drills, techniques, and live training for all levels.",
     image: noGiImg,
   },
   {
     title: "Advanced Leg Locks",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Euismod id tellus quis vulputate in fermentum lacinia pharetra aliquet. Nullam eget lacus est arcu scelerisque pharetra.",
+      "Refine your lower-body game with leg locks, entries, and control systems. Learn to attack safely and effectively using modern submission tactics.",
     image: legImg,
   },
   {
     title: "Open Mat",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Euismod id tellus quis vulputate in fermentum lacinia pharetra aliquet. Nullam eget lacus est arcu scelerisque pharetra.",
+      "Spar, drill, or flow roll at your own pace. Open mat lets you apply what you've learned, test new techniques, and gain valuable mat time with teammates.",
     image: openMatImg,
   },
 ];

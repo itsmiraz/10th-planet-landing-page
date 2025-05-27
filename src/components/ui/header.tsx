@@ -94,14 +94,18 @@ const Header = () => {
       </div>
 
       <div className="hidden md:flex gap-x-4 items-center">
-        <div className="flex  text-[20px] items-center px-x-[17px] py-[10px] gap-2">
-          <FrIcon />
-          <p>Francais’</p>
-        </div>
-        <Divider />
-        <div className="flex text-[20px]  items-center  px-x-[17px] py-[10px] gap-2">
-          <p>English</p>
-          <UKIcon />
+        <div className="flex gap-6  justify-between items-center">
+          <div className="flex  gap-x-[14px] items-center">
+            {socialLinks.map((item, i) => (
+              <div
+                key={i}
+              >
+                <span key={i}>{item.icon}</span>
+              </div>
+            ))}
+          </div>
+
+          <LanguageSelector />
         </div>
       </div>
       <AnimatePresence>
@@ -144,9 +148,7 @@ const Header = () => {
                   </motion.div>
                 ))}
               </div>
-              {/* <div className="bg-[#FFFFFF]/20 gap-x-2 flex justify-center items-center rounded-[6px] py-2 px-3  w-fit ">
-                <p>ENG</p> <CanadaIcon /> <ChevronDown />
-              </div> */}
+
               <LanguageSelector />
             </div>
           </motion.div>
@@ -167,8 +169,7 @@ const LanguageSelector = () => {
 
   const languages = [
     { code: "ENG", icon: <CanadaIcon /> },
-    { code: "FR", icon: <FranceIcon/> },
-    { code: "UK", icon: <UKICON/>},
+    { code: "FR", icon: <FranceIcon /> },
   ];
 
   const toggleDropdown = () => setOpen(!open);
