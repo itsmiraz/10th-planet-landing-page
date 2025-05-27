@@ -4,10 +4,12 @@ import noGiImg from "@/assets/images/noGi.png";
 import openMatImg from "@/assets/images/openMat.png";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import { Trans, useTranslation } from "react-i18next";
 const trainingEvents = [
   {
     title: "No Gi",
-    description:"Train without the gi in a system focused on control, submissions, and real-world grappling. Build core skills through drills, techniques, and live training for all levels.",
+    description:
+      "Train without the gi in a system focused on control, submissions, and real-world grappling. Build core skills through drills, techniques, and live training for all levels.",
     image: noGiImg,
   },
   {
@@ -25,6 +27,22 @@ const trainingEvents = [
 ];
 const Program = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
+  const { t } = useTranslation();
+
+  const trainingEvents = [
+    {
+      key: "noGi",
+      image: noGiImg,
+    },
+    {
+      key: "legLocks",
+      image: legImg,
+    },
+    {
+      key: "openMat",
+      image: openMatImg,
+    },
+  ];
 
   return (
     <motion.div
@@ -35,35 +53,33 @@ const Program = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="pt-[70px] md:pt-[195px] px-[20px] overflow-hidden relative pb-[117px] font-jakarta"
     >
-      <h1 className="text-[34px] md:text-[50px] uppercase  pb-[27px] font-extrabold text-center leading-[100%]">
-        Our Program
+      <h1 className="text-[34px] md:text-[50px] uppercase pb-[27px] font-extrabold text-center leading-[100%]">
+        {t("programTitle")}
       </h1>
-      <div className="w-[96px] h-[8px]  bg-[#F58215] mx-auto"></div>
+      <div className="w-[96px] h-[8px] bg-[#F58215] mx-auto"></div>
+
       <p className="text-[18px] md:text-[24px] text-center pt-[38px] leading-[146%]">
-        At 10th Planet Montreal, we bring a modern, no-gi approach to Brazilian
-        Jiu-Jitsu, rooted <br className="md:block hidden" /> in the innovative
-        system developed by <span className="font-bold">Eddie Bravo</span>. Our
-        academy is built for practitioners of <br className="md:block hidden" />{" "}
-        all levels, from beginners looking to start their Jiu-Jitsu journey to
-        experienced grapplers <br className="md:block hidden" /> seeking to
-        refine their skills in a competitive environment.
+        <Trans
+          i18nKey="programDescription"
+          components={{ strong: <span className="font-bold" />, br: <br /> }}
+        />
       </p>
 
       <div className="mt-[79px] justify-center flex md:flex-row flex-col gap-[36px]">
-        {trainingEvents.map((item, i) => (
+        {trainingEvents.map(({ key, image }, i) => (
           <motion.div
+            key={key}
             initial={{ y: 80, opacity: 0 }}
             animate={{ y: inView ? 0 : 80, opacity: inView ? 1 : 0 }}
             transition={{ duration: 0.6, delay: i * 0.3, ease: "easeOut" }}
             className="rounded-[16px] max-w-[410px] py-[32px] md:py-[0px] h-fit md:h-[448px] px-[28px] md:px-[32px] font-jakarta flex flex-col justify-center items-center programCardBg"
-            key={i}
           >
-            <img className="w-[91px]" src={item.image} alt="" />
+            <img className="w-[91px]" src={image} alt="" />
             <h1 className="text-[32px] text-center pt-[34px] pb-[15px] font-bold leading-[100%]">
-              {item.title}
+              {t(`events.${key}.title`)}
             </h1>
             <p className="text-[16px] md:text-[20px] text-center">
-              {item.description}
+              {t(`events.${key}.desc`)}
             </p>
           </motion.div>
         ))}

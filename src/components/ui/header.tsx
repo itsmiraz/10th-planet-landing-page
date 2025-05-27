@@ -14,6 +14,7 @@ import CanadaIcon from "@/assets/icons/canadaIcon.svg";
 import FranceIcon from "@/assets/icons/france.svg";
 import UKICON from "@/assets/icons/ukIcon.svg";
 import ChevronDown from "@/assets/icons/dropdownIcon.svg";
+import { useTranslation } from "react-i18next";
 const Header = () => {
   const navLinks = [
     { label: "About", link: "#about" },
@@ -167,6 +168,8 @@ const LanguageSelector = () => {
     icon: <CanadaIcon />,
   });
 
+  // Inside your component
+const { i18n } = useTranslation();
   const languages = [
     { code: "ENG", icon: <CanadaIcon /> },
     { code: "FR", icon: <FranceIcon /> },
@@ -176,6 +179,7 @@ const LanguageSelector = () => {
   const selectLanguage = (lang) => {
     setSelected(lang);
     setOpen(false);
+      i18n.changeLanguage(lang.code); 
   };
 
   return (

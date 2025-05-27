@@ -9,6 +9,7 @@ import Img3 from "@/assets/images/gallery/img3.jpg";
 import Img4 from "@/assets/images/gallery/img4.jpg";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import { t } from "i18next";
 
 const testimonials = [Img4, Img1, Img2, Img3, Img4, Img2, Img3, Img1];
 const Gallery = () => {
@@ -28,13 +29,12 @@ const Gallery = () => {
     >
       <div>
         <h1 className="text-[32px] md:text-[50px] uppercase  pb-[27px] font-extrabold text-center leading-[100%]">
-          GALLERY
+           {t("galleryTitle")}
         </h1>
-        <div className="w-[96px] h-[8px]  bg-[#F58215] mx-auto"></div>
-        <p className="text-[18px] px-[20px] md:text-[22px] pt-[41px] text-center leading-[142%]">
-        Take a look inside our world. From training sessions to competitions, our <br className="md:block hidden" /> gallery highlights the energy, focus, and community of 10th Planet Montreal.
-        </p>
-
+       <p
+        className="text-[18px] px-[20px] md:text-[22px] pt-[41px] text-center leading-[142%]"
+        dangerouslySetInnerHTML={{ __html: t("galleryDescription") }}
+      />
         <div className="py-12 max-w-[2000px] overflow-hidden mx-auto relative px-4">
           <Swiper
             ref={swiperRef}

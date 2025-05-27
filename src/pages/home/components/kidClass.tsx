@@ -20,7 +20,9 @@ const KidClass = () => {
           <>Join The Kid Class</>
         </AnimatedText>
         <p className="text-[18px] md:text-[22px] max-w-[620px]">
-        Help your child build confidence, discipline, and athleticism in a fun and structured no-gi environment. Our kid’s program teaches real Jiu-Jitsu skills through movement, games, and teamwork.
+          Help your child build confidence, discipline, and athleticism in a fun
+          and structured no-gi environment. Our kid’s program teaches real
+          Jiu-Jitsu skills through movement, games, and teamwork.
         </p>
         <div className="flex md:flex-row flex-col  mt-[20px] items-center  md:items-center gap-6">
           <div className="flex items-center gap-x-2 ">
@@ -32,18 +34,15 @@ const KidClass = () => {
               Per <br /> Month
             </p>
           </div>
-          {/* <button className="bg-[#F58215] md:w-fit w-full h-fit leading-[100%] px-8 py-[14px] rounded-[9px] text-[#FFFFFF] text-[22px]">
-            Subscribe
-          </button> */}
-          <Button variant="solid">
-
-            Subscribe
-          </Button>
-        
+          <Button variant="solid">Subscribe</Button>
         </div>
       </div>
       <div className="px-[22px] md:pt-0 md:px-0 pt-[44px]">
-        <img className="h-full md:rounded-none rounded-[24px]" src={KidClassImg} alt="" />
+        <img
+          className="h-full md:rounded-none rounded-[24px]"
+          src={KidClassImg}
+          alt=""
+        />
       </div>
     </motion.div>
   );
