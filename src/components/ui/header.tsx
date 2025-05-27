@@ -12,16 +12,16 @@ import WhatsAppIcon from "@/assets/icons/whatsapp.svg";
 import MailIcon from "@/assets/icons/emailO.svg";
 import CanadaIcon from "@/assets/icons/canadaIcon.svg";
 import FranceIcon from "@/assets/icons/france.svg";
-import UKICON from "@/assets/icons/ukIcon.svg";
 import ChevronDown from "@/assets/icons/dropdownIcon.svg";
 import { useTranslation } from "react-i18next";
 const Header = () => {
+  const { t } = useTranslation();
   const navLinks = [
-    { label: "About", link: "#about" },
-    { label: "Program", link: "#program" },
-    { label: "Instructors", link: "#instructors" },
-    { label: "Gallery", link: "#gallery" },
-    { label: "Contact", link: "#contact" },
+    { label: t("nav.about"), link: "#about" },
+    { label: t("nav.program"), link: "#program" },
+    { label: t("nav.instructors"), link: "#instructors" },
+    { label: t("nav.gallery"), link: "#gallery" },
+    { label: t("nav.contact"), link: "#contact" },
   ];
   const socialLinks = [
     {
@@ -98,9 +98,7 @@ const Header = () => {
         <div className="flex gap-6  justify-between items-center">
           <div className="flex  gap-x-[14px] items-center">
             {socialLinks.map((item, i) => (
-              <div
-                key={i}
-              >
+              <div key={i}>
                 <span key={i}>{item.icon}</span>
               </div>
             ))}
@@ -169,7 +167,7 @@ const LanguageSelector = () => {
   });
 
   // Inside your component
-const { i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const languages = [
     { code: "ENG", icon: <CanadaIcon /> },
     { code: "FR", icon: <FranceIcon /> },
@@ -179,7 +177,7 @@ const { i18n } = useTranslation();
   const selectLanguage = (lang) => {
     setSelected(lang);
     setOpen(false);
-      i18n.changeLanguage(lang.code); 
+    i18n.changeLanguage(lang.code);
   };
 
   return (

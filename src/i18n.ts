@@ -6,6 +6,13 @@ import LanguageDetector from "i18next-browser-languagedetector";
 const resources = {
   ENG: {
     translation: {
+      nav: {
+        about: "About",
+        program: "Program",
+        instructors: "Instructors",
+        gallery: "Gallery",
+        contact: "Contact",
+      },
       heroSubtitle: "Best Source of No-Gi Jiu Jitsu in Montreal",
       heroTitle: "10th Planet Jiu- Jitsu\nMontreal",
       subscribe: "Subscribe",
@@ -62,6 +69,13 @@ const resources = {
   },
   FR: {
     translation: {
+      nav: {
+        about: "À propos",
+        program: "Programme",
+        instructors: "Instructeurs",
+        gallery: "Galerie",
+        contact: "Contact",
+      },
       heroSubtitle: "La meilleure source de Jiu Jitsu No-Gi à Montréal",
       heroTitle: "10e Planète Jiu-Jitsu\nMontréal",
       subscribe: "S'abonner",
