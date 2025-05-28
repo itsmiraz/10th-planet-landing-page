@@ -2,7 +2,7 @@ import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import BlackBeltIcon from "@/assets/icons/blackBeltIcon.svg";
 import BrownBeltIcon from "@/assets/icons/brownBeltIcon.svg";
-import TitleIcon from "@/assets/icons/title.svg";
+import TitleIcon from "@/assets/icons/title.svg?url";
 import instructor1 from "@/assets/images/instructor1.png";
 import instructor2 from "@/assets/images/instructor2.png";
 
@@ -57,12 +57,14 @@ const instructors = t("instructors", { returnObjects: true }) as Array<{
                 <h2 className="text-[30px] md:text-[40px] uppercase leading-[100%] md:pb-0 pb-[30px] font-bold text-center md:text-start">
                   {instructor.name}
                 </h2>
-                <span className={`flex leading-[100%] items-center font-bold gap-x-2 text-[18px] md:text-[24px] px-[26px] py-2 rounded-[12px] ${
+                <div className={`flex leading-[100%] items-center font-bold gap-x-2 text-[18px] md:text-[24px] px-[26px] py-2 rounded-[12px] ${
                   idx === 0 ? "bg-[#1B1B1B]" : "bg-[#744A30]"
                 }`}>
-                  <TitleIcon />
-                  {instructor.belt}
-                </span>
+                <img className="md:w-[31px] w-[24px]" src={TitleIcon} alt="" />
+                <p>
+                    {instructor.belt}
+                </p>
+                </div>
               </div>
               <p className="text-[16px] md:text-[22px] md:text-start text-center text-white leading-[142%]">
                 {instructor.description}

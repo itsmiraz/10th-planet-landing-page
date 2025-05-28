@@ -67,7 +67,7 @@ const Gallery = () => {
             {testimonials.map((t, i) => (
               <SwiperSlide key={i}>
                 <div  onClick={() => setSelectedImage(t)} className="relative ">
-                  <div className="bg-black/50 hover:bg-black/0 transition-all ease-in-out duration-300 cursor-pointer absolute top-0 left-0 w-full h-full"></div>
+                  <div className="transition-all ease-in-out duration-300 cursor-pointer absolute top-0 left-0 w-full h-full"></div>
                   <img src={t} alt="" />
                 </div>
               </SwiperSlide>

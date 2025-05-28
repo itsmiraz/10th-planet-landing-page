@@ -34,12 +34,12 @@ const KidClass = () => {
               Per <br /> Month
             </p>
           </div>
-          <Button variant="solid">Subscribe</Button>
+          <Button className="md:w-fit w-full" variant="solid">Subscribe</Button>
         </div>
       </div>
-      <div className="px-[22px] md:pt-0 md:px-0 pt-[44px]">
+      <div className="px-[22px] overflow-hidden  md:pt-0 md:px-0 pt-[44px]">
         <img
-          className="h-full md:rounded-none rounded-[24px]"
+          className="h-full object-cover md:rounded-none rounded-[24px]"
           src={KidClassImg}
           alt=""
         />

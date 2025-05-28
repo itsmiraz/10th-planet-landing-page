@@ -61,7 +61,7 @@ const Program = () => {
       <p className="text-[18px] md:text-[24px] text-center pt-[38px] leading-[146%]">
         <Trans
           i18nKey="programDescription"
-          components={{ strong: <span className="font-bold" />, br: <br /> }}
+          components={{ strong: <span className="font-bold" />, br: <br className="md:block hidden" /> }}
         />
       </p>
 
