@@ -29,12 +29,14 @@ const Gallery = () => {
     >
       <div>
         <h1 className="text-[32px] md:text-[50px] uppercase  pb-[27px] font-extrabold text-center leading-[100%]">
-           {t("galleryTitle")}
+          {t("galleryTitle")}
         </h1>
-       <p
-        className="text-[18px] px-[20px] md:text-[22px] pt-[41px] text-center leading-[142%]"
-        dangerouslySetInnerHTML={{ __html: t("galleryDescription") }}
-      />
+        <div className="w-[156px] h-[8px] bg-[#F58215] mx-auto"></div>
+
+        <p
+          className="text-[18px] px-[20px] md:text-[22px] pt-[41px] text-center leading-[142%]"
+          dangerouslySetInnerHTML={{ __html: t("galleryDescription") }}
+        />
         <div className="py-12 max-w-[2000px] overflow-hidden mx-auto relative px-4">
           <Swiper
             ref={swiperRef}
@@ -66,7 +68,7 @@ const Gallery = () => {
           >
             {testimonials.map((t, i) => (
               <SwiperSlide key={i}>
-                <div  onClick={() => setSelectedImage(t)} className="relative ">
+                <div onClick={() => setSelectedImage(t)} className="relative ">
                   <div className="transition-all ease-in-out duration-300 cursor-pointer absolute top-0 left-0 w-full h-full"></div>
                   <img src={t} alt="" />
                 </div>
@@ -74,9 +76,8 @@ const Gallery = () => {
             ))}
           </Swiper>
         </div>
-
       </div>
-      
+
       {/* 🔍 Modal */}
       {selectedImage && (
         <div

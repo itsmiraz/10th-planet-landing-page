@@ -11,6 +11,9 @@ body {
 
 .programCardBg{
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.053) 100%);
+    backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
 
 }
 .footerBg{

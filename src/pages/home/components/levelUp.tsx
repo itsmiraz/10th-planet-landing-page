@@ -46,11 +46,10 @@ const LevelUp = () => {
         </div>
         <div className="p-4 w-full md:w-fit  rounded-[10px] bg-white flex  justify-center md:justify-end items-center">
           <img
-            className="md:w-[300px] w-[121px]"
+            className="md:w-[300px] bg-red-white w-[121px]"
             src={PoweredByPaypal2}
             alt=""
           />
-          {/* <img className="md:w-fit w-[121px] block md:hidden " src={PoweredByPaypal2} alt="" /> */}
         </div>
       </motion.div>
     </div>

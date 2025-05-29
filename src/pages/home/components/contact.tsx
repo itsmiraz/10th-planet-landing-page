@@ -88,7 +88,9 @@ const Contact = () => {
           </div>
         </div>
         <div className="flex  w-full gap-[20px] flex-col justify-center items-center">
-          <AddressIcon />
+          <div className="text-white">
+            <AddressIcon />
+          </div>
           <div className="text-center">
             <p className="text-[20px] text-bold">Address :</p>
 
@@ -99,7 +101,9 @@ const Contact = () => {
           </div>
         </div>
         <div className="flex  w-full  gap-[20px] flex-col justify-center items-center">
-          <PhoneIcon />
+          <div className="text-white">
+            <PhoneIcon />
+          </div>
           <div className="text-center">
             <p className="text-[20px] text-bold">Phone :</p>
             <p className="text-[22px]">(514) 516-4922</p>
