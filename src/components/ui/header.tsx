@@ -164,6 +164,7 @@ const LanguageSelector = () => {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState({
     code: "ENG",
+    lng:'en',
     icon: <CanadaIcon />,
   });
 
@@ -186,7 +187,9 @@ const LanguageSelector = () => {
   };
   // Sync selected language with i18n.language
   useEffect(() => {
-    const current = languages.find((l) => l.lng === i18n.language);
+    console.log('-------',i18n.language);
+    const current = languages.find((l) => l.code === i18n.language);
+    console.log(current);
     if (current) {
       setSelected(current);
     }
