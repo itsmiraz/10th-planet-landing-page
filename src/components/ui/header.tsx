@@ -88,7 +88,9 @@ const Header = () => {
           ))}
         </ul>
       </div>
-      <div className="md:hidden block z-40 relative">
+      <div className="md:hidden flex  items-center gap-3 z-40 relative">
+        <LanguageSelector />
+
         <button onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <Close /> : <Menu />}
         </button>
@@ -103,7 +105,6 @@ const Header = () => {
               </div>
             ))}
           </div>
-
           <LanguageSelector />
         </div>
       </div>
@@ -148,7 +149,7 @@ const Header = () => {
                 ))}
               </div>
 
-              <LanguageSelector />
+              {/* <LanguageSelector /> */}
             </div>
           </motion.div>
         )}
