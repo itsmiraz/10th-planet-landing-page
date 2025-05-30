@@ -4,7 +4,7 @@ import UKIcon from "@/assets/icons/uk.svg";
 import Divider from "@/assets/icons/divider.svg";
 import Close from "@/assets/icons/close.svg";
 import Menu from "@/assets/icons/menu.svg";
-import { useState } from "react";
+import { JSX, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import FacebookIcon from "@/assets/icons/facebook.svg";
 import InstaIcon from "@/assets/icons/insta.svg";
@@ -169,18 +169,28 @@ const LanguageSelector = () => {
 
   // Inside your component
   const { i18n } = useTranslation();
-  const languages = [
-    { code: "ENG", icon: <CanadaIcon /> },
-    { code: "FR", icon: <FranceIcon /> },
+  type LanguageOption = {
+    code: string;
+    lng: string;
+    icon: JSX.Element;
+  };
+  const languages: LanguageOption[] = [
+    { code: "ENG", lng: "en", icon: <CanadaIcon /> },
+    { code: "FR", lng: "fr", icon: <FranceIcon /> },
   ];
-
   const toggleDropdown = () => setOpen(!open);
   const selectLanguage = (lang) => {
     setSelected(lang);
     setOpen(false);
     i18n.changeLanguage(lang.code);
   };
-
+  // Sync selected language with i18n.language
+  useEffect(() => {
+    const current = languages.find((l) => l.lng === i18n.language);
+    if (current) {
+      setSelected(current);
+    }
+  }, [i18n.language]);
   return (
     <div className="relative">
       <div
