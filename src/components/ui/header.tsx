@@ -177,7 +177,7 @@ const LanguageSelector = () => {
   };
   const languages: LanguageOption[] = [
     { code: "ENG", lng: "en", icon: <CanadaIcon /> },
-    { code: "FR", lng: "fr", icon: <FranceIcon /> },
+    { code: "FR", lng: "fr", icon: <FrIcon /> },
   ];
   const toggleDropdown = () => setOpen(!open);
   const selectLanguage = (lang) => {
@@ -200,7 +200,7 @@ const LanguageSelector = () => {
         onClick={toggleDropdown}
         className="bg-[#FFFFFF]/20 gap-x-2 flex justify-center items-center rounded-[6px] py-2 px-3 w-fit cursor-pointer select-none"
       >
-        <p>{selected.code}</p>
+        <div >{selected.code}</div>
         {selected.icon}
         <div className={`transition-transform ${open ? "rotate-180" : ""}`}>
           <ChevronDown />
