@@ -49,10 +49,10 @@ const Contact = () => {
     setIsSending(true);
     emailjs
       .sendForm(
-        "service_okq3dcd",     // Replace with your EmailJS Service ID
-        "template_qxonc7n",    // Replace with your EmailJS Template ID
+        "service_2bm0hu4",     // Replace with your EmailJS Service ID
+        "template_g9pzj46",    // Replace with your EmailJS Template ID
         formRef.current!,
-        "KBUe2RdPLUH8fGq3V" // Replace with your EmailJS Public Key
+        "mCFnCpa4ZuCRPF-xk" // Replace with your EmailJS Public Key
       )
       .then(() => {
         setSuccessMessage("Message sent successfully!");
