@@ -26,7 +26,8 @@ const images = [
 
 const Gallery = () => {
   const swiperRef = useRef(null);
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1,
+rootMargin: "0px 0px -20% 0px", });
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 

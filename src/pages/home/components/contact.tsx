@@ -10,7 +10,8 @@ import emailjs from "@emailjs/browser";
 import { useTranslation } from "react-i18next";
 
 const Contact = () => {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1,
+rootMargin: "0px 0px -20% 0px",});
   const formRef = useRef<HTMLFormElement>(null);
   const { t } = useTranslation();
 

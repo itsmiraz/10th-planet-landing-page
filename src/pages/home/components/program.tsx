@@ -26,7 +26,11 @@ const trainingEvents = [
   },
 ];
 const Program = () => {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+    rootMargin: "0px 0px -20% 0px",
+  });
   const { t } = useTranslation();
 
   const trainingEvents = [
@@ -61,9 +65,9 @@ const Program = () => {
       <p className="text-[18px] md:text-[24px] text-center pt-[38px] leading-[146%] whitespace-pre-line">
         <Trans
           i18nKey="programDescription"
-          components={{ 
-            strong: <span className="font-bold" />, 
-            br: <br className="xl:block hidden" /> 
+          components={{
+            strong: <span className="font-bold" />,
+            br: <br className="xl:block hidden" />,
           }}
         />
       </p>

@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/buttons";
 import { Trans, useTranslation } from "react-i18next";
 const LevelUp = () => {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
+  const { ref, inView } = useInView({ triggerOnce: true,   threshold: 0.1,
+  rootMargin: "0px 0px -20% 0px", });
   const { t } = useTranslation();
   return (
     <div
