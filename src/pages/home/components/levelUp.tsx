@@ -12,7 +12,7 @@ const LevelUp = () => {
     <div
       id="about"
       ref={ref}
-      className="pt-[100px] md:pt-[170px] px-[20px] font-jakarta pb-[20px]"
+      className="pt-[70px] md:pt-[15px] px-[20px] font-jakarta pb-[20px]"
     >
       <motion.div
         initial={{ y: 80, opacity: 0 }}
@@ -24,8 +24,8 @@ const LevelUp = () => {
           <h2 className="text-[24px] md:text-[36px] font-semibold leading-[100%]">
             {t("levelUp.title")}
           </h2>
-          <p className="text-[16px] md:text-[22px] py-[18px] md:py-[8px] md:max-w-[805px]">
-            <Trans i18nKey="levelUp.description" components={{ br: <br /> }} />
+          <p className="text-[16px] md:text-[22px] py-[18px] md:py-[8px] lg:max-w-[805px]">
+            <Trans i18nKey="levelUp.description" components={{ br: <br className="lg:block hidden" /> }} />
           </p>
           <div className="flex flex-wrap  justify-center md:justify-start items-center gap-6">
             <div className="flex items-center gap-x-2 ">
@@ -38,8 +38,11 @@ const LevelUp = () => {
               </p>
             </div>
 
-            <Button className="w-full md:w-fit" variant="solid">
-              {" "}
+            <Button 
+              className="w-full md:w-fit" 
+              variant="solid"
+              onClick={() => window.open("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RKFTX7UJMLXQ8", "_blank")}
+            >
               {t("subscribe")}
             </Button>
           </div>

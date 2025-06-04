@@ -3,15 +3,27 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { useRef, useState } from "react";
-import Img1 from "@/assets/images/gallery/img1.jpg";
-import Img2 from "@/assets/images/gallery/img2.jpg";
-import Img3 from "@/assets/images/gallery/img3.jpg";
-import Img4 from "@/assets/images/gallery/img4.jpg";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { t } from "i18next";
 
-const testimonials = [Img4, Img1, Img2, Img3, Img4, Img2, Img3, Img1];
+// Import all 15 images
+const images = [
+  "/src/assets/images/gallery/1.jpg",
+  "/src/assets/images/gallery/2.jpg",
+  "/src/assets/images/gallery/3.jpg",
+  "/src/assets/images/gallery/4.jpg",
+  "/src/assets/images/gallery/5.jpg",
+  "/src/assets/images/gallery/7.jpg",
+  "/src/assets/images/gallery/8.jpg",
+  "/src/assets/images/gallery/10.jpg",
+  "/src/assets/images/gallery/11.jpg",
+  "/src/assets/images/gallery/12.jpg",
+  "/src/assets/images/gallery/13.jpg",
+  "/src/assets/images/gallery/14.jpg",
+  "/src/assets/images/gallery/15.jpg",
+];
+
 const Gallery = () => {
   const swiperRef = useRef(null);
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
@@ -25,7 +37,7 @@ const Gallery = () => {
       animate={{ y: inView ? 0 : 80, opacity: inView ? 1 : 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       ref={ref}
-      className="font-jakarta pt-[40px] mb-[200px]"
+      className="font-jakarta pt-[120px] mb-[200px]"
     >
       <div>
         <h1 className="text-[32px] md:text-[50px] uppercase  pb-[27px] font-extrabold text-center leading-[100%]">
@@ -41,24 +53,20 @@ const Gallery = () => {
           <Swiper
             ref={swiperRef}
             modules={[Pagination, Navigation, Autoplay]}
-            // slidesPerView={1.2}
             pagination={{
               el: ".custom-pagination",
               clickable: true,
               bulletClass: "custom-bullet",
               bulletActiveClass: "custom-bullet-active",
             }}
-            // centeredSlides
             loop
             spaceBetween={24}
             navigation={{
               nextEl: ".right-arrow",
               prevEl: ".left-arrow",
             }}
-            // loop={true}
             autoplay={{
-              delay: 2000, // 5000ms = 5 seconds
-              // disableOnInteraction: false, // keeps autoplay running after manual swipe
+              delay: 2000,
             }}
             breakpoints={{
               450: { slidesPerView: 1 },
@@ -66,11 +74,15 @@ const Gallery = () => {
               1024: { slidesPerView: 4 },
             }}
           >
-            {testimonials.map((t, i) => (
+            {images.map((image, i) => (
               <SwiperSlide key={i}>
-                <div onClick={() => setSelectedImage(t)} className="relative ">
+                <div onClick={() => setSelectedImage(image)} className="relative aspect-[9/16]">
                   <div className="transition-all ease-in-out duration-300 cursor-pointer absolute top-0 left-0 w-full h-full"></div>
-                  <img src={t} alt="" />
+                  <img 
+                    src={image} 
+                    alt={`Gallery image ${i + 1}`} 
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                  />
                 </div>
               </SwiperSlide>
             ))}

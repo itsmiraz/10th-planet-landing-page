@@ -37,7 +37,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variantClasses =
     variant === 'solid'
-      ? 'bg-[#F58215] text-white hover:brightness-90'
+      ? 'bg-[#F58215] text-white hover:bg-white hover:text-[#F58215]'
       : 'border border-white text-white bg-transparent hover:bg-white hover:text-[#F58215]';
 
   return (

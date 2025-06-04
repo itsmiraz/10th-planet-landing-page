@@ -7,10 +7,12 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/buttons";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
   const formRef = useRef<HTMLFormElement>(null);
+  const { t } = useTranslation();
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -25,14 +27,14 @@ const Contact = () => {
 
   const validate = () => {
     const newErrors: { [key: string]: string } = {};
-    if (!formData.firstName.trim()) newErrors.firstName = "First name is required.";
-    if (!formData.lastName.trim()) newErrors.lastName = "Last name is required.";
+    if (!formData.firstName.trim()) newErrors.firstName = t("contact.form.errors.firstName");
+    if (!formData.lastName.trim()) newErrors.lastName = t("contact.form.errors.lastName");
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required.";
+      newErrors.email = t("contact.form.errors.email.required");
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Email is invalid.";
+      newErrors.email = t("contact.form.errors.email.invalid");
     }
-    if (!formData.message.trim()) newErrors.message = "Message is required.";
+    if (!formData.message.trim()) newErrors.message = t("contact.form.errors.message");
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -49,19 +51,19 @@ const Contact = () => {
     setIsSending(true);
     emailjs
       .sendForm(
-        "service_2bm0hu4",     // Replace with your EmailJS Service ID
-        "template_g9pzj46",    // Replace with your EmailJS Template ID
+        "service_2bm0hu4",
+        "template_g9pzj46",
         formRef.current!,
-        "mCFnCpa4ZuCRPF-xk" // Replace with your EmailJS Public Key
+        "mCFnCpa4ZuCRPF-xk"
       )
       .then(() => {
-        setSuccessMessage("Message sent successfully!");
+        setSuccessMessage(t("contact.form.success"));
         setFormData({ firstName: "", lastName: "", email: "", message: "" });
         setIsSending(false);
         setErrors({});
       })
       .catch(() => {
-        setSuccessMessage("Something went wrong. Please try again later.");
+        setSuccessMessage(t("contact.form.error"));
         setIsSending(false);
       });
   };
@@ -76,7 +78,7 @@ const Contact = () => {
       className="font-jakarta px-[20px] overflow-hidden relative"
     >
       <h1 className="text-[32px] md:text-[50px] uppercase pb-[27px] font-extrabold text-center leading-[100%]">
-        Contact US
+        {t("contact.title")}
       </h1>
       <div className="w-[96px] h-[8px] bg-[#F58215] mx-auto" />
 
@@ -87,7 +89,7 @@ const Contact = () => {
       >
         <div className="flex md:flex-row flex-col gap-[38px]">
           <div className="w-full">
-            <label className="text-[16px] mb-[10px]">First Name</label>
+            <label className="text-[16px] mb-[10px]">{t("contact.form.firstName")}</label>
             <input
               className="w-full mt-[10px] border p-[14px] rounded-[4px] border-[#737373] bg-transparent focus:outline-none"
               type="text"
@@ -98,7 +100,7 @@ const Contact = () => {
             {errors.firstName && <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>}
           </div>
           <div className="w-full">
-            <label className="text-[16px] mb-[10px]">Last Name</label>
+            <label className="text-[16px] mb-[10px]">{t("contact.form.lastName")}</label>
             <input
               className="w-full mt-[10px] border p-[14px] rounded-[4px] border-[#737373] bg-transparent focus:outline-none"
               type="text"
@@ -111,7 +113,7 @@ const Contact = () => {
         </div>
 
         <div>
-          <label className="text-[16px] mb-[10px]">Email</label>
+          <label className="text-[16px] mb-[10px]">{t("contact.form.email")}</label>
           <input
             className="w-full border mt-[10px] p-[14px] rounded-[4px] border-[#737373] bg-transparent focus:outline-none"
             type="email"
@@ -123,7 +125,7 @@ const Contact = () => {
         </div>
 
         <div>
-          <label className="text-[16px]">Message</label>
+          <label className="text-[16px]">{t("contact.form.message")}</label>
           <textarea
             className="w-full bg-transparent mt-[10px] border h-[135px] p-[14px] rounded-[4px] border-[#737373] focus:outline-none"
             name="message"
@@ -135,7 +137,7 @@ const Contact = () => {
 
         <div className="flex justify-center items-center mt-4">
           <Button variant="solid" type="submit" disabled={isSending}>
-            {isSending ? "Sending..." : "Send"}
+            {isSending ? t("contact.form.sending") : t("contact.form.send")}
           </Button>
         </div>
 
@@ -149,7 +151,7 @@ const Contact = () => {
         <div className="flex w-full gap-[20px] flex-col justify-center items-center">
           <EmailIcon />
           <div className="text-center">
-            <p className="text-[20px] font-bold">Email:</p>
+            <p className="text-[20px] font-bold">{t("contact.info.email")}</p>
             <p className="text-[22px]">10thplanetjjmtl@gmail.com</p>
           </div>
         </div>
@@ -158,10 +160,10 @@ const Contact = () => {
             <AddressIcon />
           </div>
           <div className="text-center">
-            <p className="text-[20px] font-bold">Address :</p>
+            <p className="text-[20px] font-bold">{t("contact.info.address")}</p>
             <p className="text-[22px]">
               6723 Boulevard Monk <br />
-              Montreal, Quebec, H4E 3J2
+              Montreal, QC, H4E 3J2
             </p>
           </div>
         </div>
@@ -170,7 +172,7 @@ const Contact = () => {
             <PhoneIcon />
           </div>
           <div className="text-center">
-            <p className="text-[20px] font-bold">Phone :</p>
+            <p className="text-[20px] font-bold">{t("contact.info.phone")}</p>
             <p className="text-[22px]">(514) 516-4922</p>
           </div>
         </div>

@@ -13,8 +13,8 @@ const Home = () => {
       <Hero />
        <Program />
      <LevelUp/>
+     <KidClass/>
      <Instructors/>
-      <KidClass/>
       <Gallery/>
       <Contact/> 
     </div>

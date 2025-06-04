@@ -11,7 +11,7 @@ import InstaIcon from "@/assets/icons/insta.svg";
 import WhatsAppIcon from "@/assets/icons/whatsapp.svg";
 import MailIcon from "@/assets/icons/emailO.svg";
 import CanadaIcon from "@/assets/icons/canadaIcon.svg";
-import FranceIcon from "@/assets/icons/france.svg";
+import QuebecIcon from "@/assets/icons/quebec.svg";
 import ChevronDown from "@/assets/icons/dropdownIcon.svg";
 import { useTranslation } from "react-i18next";
 const Header = () => {
@@ -26,23 +26,18 @@ const Header = () => {
   const socialLinks = [
     {
       icon: <FacebookIcon />,
-      link: "https://www.facebook.com",
+      link: "https://www.facebook.com/10thplanetmontreal",
       label: "Facebook",
     },
     {
       icon: <InstaIcon />,
-      link: "https://www.instagram.com",
+      link: "https://www.instagram.com/10pmontreal",
       label: "Instagram",
     },
     {
       icon: <WhatsAppIcon />,
-      link: "https://wa.me/your-number",
-      label: "WhatsApp",
-    },
-    {
-      icon: <MailIcon />,
-      link: "mailto:your-email@example.com",
-      label: "Email",
+      link: "tel:+15145164922",
+      label: "Phone",
     },
   ];
   const [isOpen, setIsOpen] = useState(false);
@@ -71,10 +66,10 @@ const Header = () => {
   };
 
   return (
-    <div className="flex pt-[17px] max-w-[1440px] mx-auto px-[20px] md:px-10 font-jakarta justify-between items-center">
+    <div className="flex pt-[17px] max-w-[1440px] mx-auto px-[20px] lg:px-10 font-jakarta justify-between items-center">
       <div className="flex z-30 gap-x-[47px] items-center">
-        <img src={logo} className="md:w-fit w-[100px]" alt="" />
-        <ul className="hidden md:flex  items-center gap-x-[44px]  ">
+        <img src={logo} alt="10th Planet Logo" className="w-[80px] lg:w-[120px]" />
+        <ul className="hidden lg:flex  items-center gap-x-[44px]  ">
           {navLinks.map((item) => (
             <li key={item.label} className="text-[20px] relative group">
               <a
@@ -88,7 +83,7 @@ const Header = () => {
           ))}
         </ul>
       </div>
-      <div className="md:hidden flex  items-center gap-3 z-40 relative">
+      <div className="lg:hidden flex  items-center gap-3 z-40 relative">
         <LanguageSelector />
 
         <button onClick={() => setIsOpen(!isOpen)}>
@@ -96,13 +91,19 @@ const Header = () => {
         </button>
       </div>
 
-      <div className="hidden md:flex gap-x-4 items-center">
+      <div className="hidden lg:flex gap-x-4 items-center">
         <div className="flex gap-6  justify-between items-center">
           <div className="flex  gap-x-[14px] items-center">
             {socialLinks.map((item, i) => (
-              <div key={i}>
-                <span key={i}>{item.icon}</span>
-              </div>
+              <a 
+                key={i} 
+                href={item.link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                {item.icon}
+              </a>
             ))}
           </div>
           <LanguageSelector />
@@ -115,7 +116,7 @@ const Header = () => {
             animate="visible"
             exit="exit"
             variants={mobileMenuVariants}
-            className="absolute md:hidden px-[32px] pt-[124px] pb-[24px] w-full bg-[#545556] top-0 left-0 z-20"
+            className="absolute lg:hidden px-[32px] pt-[124px] pb-[24px] w-full bg-[#545556] top-0 left-0 z-20"
           >
             <div className="space-y-[24px]">
               {navLinks.map((item, i) => (
@@ -144,7 +145,14 @@ const Header = () => {
                     exit="exit"
                     variants={linkVariants}
                   >
-                    <span key={i}>{item.icon}</span>
+                    <a 
+                      href={item.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="hover:opacity-80 transition-opacity"
+                    >
+                      {item.icon}
+                    </a>
                   </motion.div>
                 ))}
               </div>
@@ -177,7 +185,7 @@ const LanguageSelector = () => {
   };
   const languages: LanguageOption[] = [
     { code: "ENG", lng: "en", icon: <CanadaIcon /> },
-    { code: "FR", lng: "fr", icon: <FrIcon /> },
+    { code: "FR", lng: "fr", icon: <QuebecIcon /> },
   ];
   const toggleDropdown = () => setOpen(!open);
   const selectLanguage = (lang) => {
@@ -187,9 +195,7 @@ const LanguageSelector = () => {
   };
   // Sync selected language with i18n.language
   useEffect(() => {
-    console.log('-------',i18n.language);
     const current = languages.find((l) => l.code === i18n.language);
-    console.log(current);
     if (current) {
       setSelected(current);
     }
@@ -200,8 +206,16 @@ const LanguageSelector = () => {
         onClick={toggleDropdown}
         className="bg-[#FFFFFF]/20 gap-x-2 flex justify-center items-center rounded-[6px] py-2 px-3 w-fit cursor-pointer select-none"
       >
-        <div >{selected.code}</div>
-        {selected.icon}
+        <div>{selected.code}</div>
+        <div className="w-[20px] h-[20px] rounded-full overflow-hidden flex items-center justify-center">
+          {selected.code === "FR" ? (
+            <div className="w-[24px] h-[24px] -m-[2px]">
+              {selected.icon}
+            </div>
+          ) : (
+            selected.icon
+          )}
+        </div>
         <div className={`transition-transform ${open ? "rotate-180" : ""}`}>
           <ChevronDown />
         </div>
@@ -216,7 +230,15 @@ const LanguageSelector = () => {
               className="px-3 py-2 justify-between cursor-pointer hover:bg-white/30 flex gap-x-2 items-center text-white text-sm"
             >
               <span>{lang.code}</span>
-              {lang.icon}
+              <div className="w-[20px] h-[20px] rounded-full overflow-hidden flex items-center justify-center">
+                {lang.code === "FR" ? (
+                  <div className="w-[24px] h-[24px] -m-[2px]">
+                    {lang.icon}
+                  </div>
+                ) : (
+                  lang.icon
+                )}
+              </div>
             </div>
           ))}
         </div>

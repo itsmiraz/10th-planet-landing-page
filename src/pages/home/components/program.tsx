@@ -13,7 +13,7 @@ const trainingEvents = [
     image: noGiImg,
   },
   {
-    title: "Advanced Leg Locks",
+    title: "Leg Locks",
     description:
       "Refine your lower-body game with leg locks, entries, and control systems. Learn to attack safely and effectively using modern submission tactics.",
     image: legImg,
@@ -58,14 +58,17 @@ const Program = () => {
       </h1>
       <div className="w-[96px] h-[8px] bg-[#F58215] mx-auto"></div>
 
-      <p className="text-[18px] md:text-[24px] text-center pt-[38px] leading-[146%]">
+      <p className="text-[18px] md:text-[24px] text-center pt-[38px] leading-[146%] whitespace-pre-line">
         <Trans
           i18nKey="programDescription"
-          components={{ strong: <span className="font-bold" />, br: <br className="md:block hidden" /> }}
+          components={{ 
+            strong: <span className="font-bold" />, 
+            br: <br className="xl:block hidden" /> 
+          }}
         />
       </p>
 
-      <div className="mt-[79px] justify-center flex md:flex-row flex-col gap-[36px]">
+      <div className="mt-[79px] justify-center flex flex-wrap md:flex-row flex-col gap-[36px]">
         {trainingEvents.map(({ key, image }, i) => (
           <motion.div
             key={key}

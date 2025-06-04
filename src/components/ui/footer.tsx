@@ -1,4 +1,4 @@
-import Logo from "@/assets/images/logo.png";
+import logo from "@/assets/images/logo.png";
 import FacebookIcon from "@/assets/icons/fbWhite.svg";
 import InstaIcon from "@/assets/icons/instaWhite.svg";
 import WhatsAppIcon from "@/assets/icons/whatsAppWhite.svg";
@@ -14,33 +14,34 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: <FacebookIcon />,
-      link: "https://www.facebook.com",
+      link: "https://www.facebook.com/10thplanetmontreal",
       label: "Facebook",
     },
     {
       icon: <InstaIcon />,
-      link: "https://www.instagram.com",
+      link: "https://www.instagram.com/10pmontreal",
       label: "Instagram",
     },
     {
       icon: <WhatsAppIcon />,
-      link: "https://wa.me/your-number",
-      label: "WhatsApp",
-    },
-    {
-      icon: <MailIcon />,
-      link: "mailto:your-email@example.com",
-      label: "Email",
+      link: "tel:+15145164922",
+      label: "Phone",
     },
   ];
   return (
     <div className="footerBg flex flex-col pt-[14px] pb-[52px] px-[20px] justify-center items-center">
-      <img src={Logo} alt="" />
+      <img src={logo} className="w-[100px] md:w-[140px]" alt="10th Planet Footer Logo" />
       <div className="flex justify-center pt-[20px]  gap-x-[14px] items-center">
         {socialLinks.map((item, i) => (
-          <div key={i}>
-            <span key={i}>{item.icon}</span>
-          </div>
+          <a 
+            key={i} 
+            href={item.link} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:opacity-80 transition-opacity"
+          >
+            {item.icon}
+          </a>
         ))}
       </div>
 
@@ -52,7 +53,7 @@ const Footer = () => {
         ))}
       </ul> */}
       <p className="text-center pt-[40px]">
-        10th Planet Jiu Jitsu Montreal © 2025 All rights reserved.
+        10th Planet Jiu Jitsu Montreal © 2025 All Rights Reserved.
       </p>
     </div>
   );
