@@ -72,7 +72,7 @@ const Program = () => {
         />
       </p>
 
-      <div className="mt-[79px] justify-center flex flex-wrap md:flex-row flex-col gap-[36px]">
+      <div className="mt-[79px] justify-center items-center flex flex-wrap md:flex-row flex-col gap-[36px]">
         {trainingEvents.map(({ key, image }, i) => (
           <motion.div
             key={key}
