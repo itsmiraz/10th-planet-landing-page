@@ -6,28 +6,57 @@ import { useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { t } from "i18next";
+import Img1 from "/src/assets/images/gallery/1.jpg";
+import Img2 from "/src/assets/images/gallery/2.jpg";
+import Img3 from "/src/assets/images/gallery/3.jpg";
+import Img4 from "/src/assets/images/gallery/4.jpg";
+import Img5 from "/src/assets/images/gallery/5.jpg";
+import Img6 from "/src/assets/images/gallery/7.jpg";
+import Img7 from "/src/assets/images/gallery/8.jpg";
+import Img8 from "/src/assets/images/gallery/10.jpg";
+import Img9 from "/src/assets/images/gallery/11.jpg";
+import Img10 from "/src/assets/images/gallery/12.jpg";
+import Img11 from "/src/assets/images/gallery/13.jpg";
+import Img12 from "/src/assets/images/gallery/14.jpg";
+import Img13 from "/src/assets/images/gallery/15.jpg";
 
 // Import all 15 images
 const images = [
-  "/src/assets/images/gallery/1.jpg",
-  "/src/assets/images/gallery/2.jpg",
-  "/src/assets/images/gallery/3.jpg",
-  "/src/assets/images/gallery/4.jpg",
-  "/src/assets/images/gallery/5.jpg",
-  "/src/assets/images/gallery/7.jpg",
-  "/src/assets/images/gallery/8.jpg",
-  "/src/assets/images/gallery/10.jpg",
-  "/src/assets/images/gallery/11.jpg",
-  "/src/assets/images/gallery/12.jpg",
-  "/src/assets/images/gallery/13.jpg",
-  "/src/assets/images/gallery/14.jpg",
-  "/src/assets/images/gallery/15.jpg",
+  // "/src/assets/images/gallery/1.jpg",
+  // "/src/assets/images/gallery/2.jpg",
+  // "/src/assets/images/gallery/3.jpg",
+  // "/src/assets/images/gallery/4.jpg",
+  // "/src/assets/images/gallery/5.jpg",
+  // "/src/assets/images/gallery/7.jpg",
+  // "/src/assets/images/gallery/8.jpg",
+  // "/src/assets/images/gallery/10.jpg",
+  // "/src/assets/images/gallery/11.jpg",
+  // "/src/assets/images/gallery/12.jpg",
+  // "/src/assets/images/gallery/13.jpg",
+  // "/src/assets/images/gallery/14.jpg",
+  // "/src/assets/images/gallery/15.jpg",
+  Img1,
+  Img2,
+  Img3,
+  Img4,
+  Img5,
+  Img6,
+  Img7,
+  Img8,
+  Img9,
+  Img10,
+  Img11,
+  Img12,
+  Img13,
 ];
 
 const Gallery = () => {
   const swiperRef = useRef(null);
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1,
-rootMargin: "0px 0px -20% 0px", });
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+    rootMargin: "0px 0px -20% 0px",
+  });
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -77,11 +106,14 @@ rootMargin: "0px 0px -20% 0px", });
           >
             {images.map((image, i) => (
               <SwiperSlide key={i}>
-                <div onClick={() => setSelectedImage(image)} className="relative aspect-[9/16]">
+                <div
+                  onClick={() => setSelectedImage(image)}
+                  className="relative aspect-[9/16]"
+                >
                   <div className="transition-all ease-in-out duration-300 cursor-pointer absolute top-0 left-0 w-full h-full"></div>
-                  <img 
-                    src={image} 
-                    alt={`Gallery image ${i + 1}`} 
+                  <img
+                    src={image}
+                    alt={`Gallery image ${i + 1}`}
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"
                   />
                 </div>
