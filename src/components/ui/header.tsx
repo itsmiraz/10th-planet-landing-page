@@ -69,7 +69,7 @@ const Header = () => {
     <div className="flex pt-[17px] max-w-[1440px] mx-auto px-[20px] lg:px-10 font-jakarta justify-between items-center">
       <div className="flex z-30 gap-x-[47px] items-center">
         <img src={logo} alt="10th Planet Logo" className="w-[80px] lg:w-[120px]" />
-        <ul className="hidden lg:flex  items-center gap-x-[44px]  ">
+        <ul className="hidden lg:flex  items-center gap-x-[20px] xl:gap-x-[44px]  ">
           {navLinks.map((item) => (
             <li key={item.label} className="text-[20px] relative group">
               <a
